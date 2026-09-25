@@ -466,6 +466,108 @@ footer{padding:64px 0 40px;}
   .why-grid{grid-template-columns:1fr;}
   .footer-top{flex-direction:column;}
 }
+/* ---------- UPDATED MOBILE RESPONSIVE CSS ---------- */
+
+/* Mobile view updates for Service Row Grid layout */
+@media (max-width: 760px) {
+  .wrap {
+    padding: 0 20px; /* Reduces side padding on smaller screens */
+  }
+
+  /* Nav Adjustments */
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-inner { padding: 14px 20px; }
+
+  /* Hero Section */
+  .hero-stats { gap: 24px; }
+  .svc-hero { min-height: auto; padding: 100px 0 40px; }
+  .svc-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .svc-hero-big {
+    font-size: clamp(60px, 18vw, 110px);
+  }
+
+  /* Fixed Mobile Grid for Service Rows */
+  .svc-row {
+    grid-template-columns: 60px 1fr; /* Corrected 'px' syntax error */
+    grid-template-areas: 
+      "num title"
+      "num desc";
+    gap: 12px 16px;
+    padding: 28px 0;
+    align-items: start;
+  }
+  .svc-ghost {
+    grid-area: num;
+    font-size: 36px;
+    line-height: 1;
+    margin-top: 4px;
+  }
+  .svc-title-block {
+    grid-area: title;
+  }
+  .svc-title-block h3 {
+    font-size: 20px;
+  }
+  .svc-desc {
+    grid-area: desc;
+    margin-top: 0;
+  }
+  .svc-desc p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Structural Grids */
+  .service-grid, 
+  .work-grid, 
+  .about-grid, 
+  .quote-inner, 
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Process Rows */
+  .process-row {
+    gap: 16px;
+    padding: 20px 0;
+  }
+  .process-index {
+    min-width: 36px;
+    font-size: 20px;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footer-cols {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+/* Extra small devices (Phones below 480px) */
+@media (max-width: 480px) {
+  .svc-row {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "title"
+      "desc";
+  }
+  .svc-ghost {
+    display: none; /* Mobile pe screen space clean rakhne ke liye vertical counter hidden */
+  }
+  .btn-primary, .btn-ghost {
+    width: 100%;
+    text-align: center;
+  }
+}
 </style>
 <style>
 
@@ -530,7 +632,7 @@ footer{padding:64px 0 40px;}
 
 @media (max-width:760px){
   .svc-hero-inner{grid-template-columns:1fr;}
-  .svc-row{grid-template-columns:60px 1fr; grid-template-areas:"num title" "num desc"; padding:36px 0;}
+  .svc-row{grid-template-columns:px 1fr; grid-template-areas:"num title" "num desc"; padding:36px 0;}
   .svc-ghost{font-size:38px;}
   .svc-desc{margin-top:12px;}
 }
